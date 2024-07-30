@@ -26,7 +26,7 @@ class TestArithmeticOperations(unittest.TestCase):
         self.assertEqual(divide(10, 2), 5)
         self.assertEqual(divide(-1, 1), -1)
         self.assertEqual(divide(-1, -1), 1)
-        with self.assertRaises(ValueError):
+        with self.assertRaises(ZeroDivisionError):
             divide(10, 0)
 
     def test_reminder(self):

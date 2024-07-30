@@ -6,12 +6,12 @@
 '''
 
 def check_if_bigger(a, b):
-    return # впиши решение сюда
+    return a > b
 
 
 def check_if_smaller(a, b):
-    return  # впиши решение сюда
+    return a < b
 
 
 def check_if_equal(a, b):
-    return  # впиши решение сюда
+    return a == b
