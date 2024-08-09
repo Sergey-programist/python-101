@@ -13,14 +13,46 @@
 
 """
 
-x = 0
 
-while x < 10:
-    x += 1
-    print(x)
-    
+def collect_numbers() -> tuple:
+    numbers = []
+    element = None
+    even_count = 0
+    odd_count = 0
+    positive_count = 0
+    negative_count = 0
+
+    while element != 0:
+        element = int(input())
+        if element != 0:
+            numbers.append(element)
+        if (element % 2) == 0 and element != 0:
+            even_count += 1
+        if (element % 2) != 0:
+            odd_count += 1
+        if element > 0:
+            positive_count += 1
+        if element < 0:
+            negative_count += 1
+
+    element = None
+    sum = 0
+    for element in numbers:
+        sum += element
+
+    avg = sum / len(numbers)
+
+    min_max = {"min": min(numbers), "max": max(numbers)}
+
+    odd_even = {"Чётные": even_count, "Нечётные": odd_count}
+
+    positive_negative = {
+        "Положительные": positive_count,
+        "Отрицательные": negative_count,
+    }
+
+    return (numbers, sum, avg, min_max, odd_even, positive_negative)
 
 
-
-def collect_numbers():
-    # напиши свой код
+numbers = collect_numbers()
+print(numbers)
